@@ -1,0 +1,45 @@
+<p>home works!</p>
+<div class="main-container d-flex justify-content-center flex-column my-4">
+    <div class="modal-container">
+        <div class="modal fade" id="modalBox">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Add Project</h4>
+                        <button data-dismiss="modal" class="close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="projectForm">
+                            <div class="d-flex">
+                                <input type="text" class="form-control" placeholder="Project Name" formControlName="projectName">
+                                <input type="text" class="form-control" placeholder="Project Type" formControlName="projectType">
+                            </div>
+                            <div class="d-flex">
+                                <input type="text" class="form-control" placeholder="Client Name" formControlName="clientName">
+                                <input type="text" class="form-control" placeholder="Template Name" formControlName="templateName">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger">Cancel</button>
+                        <button class="btn btn-primary" (click)="addProject()">Add Project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center justify-content-center">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalBox">Add Project</button>
+        </div>
+    </div>
+</div>
+<div class="card-container d-flex justify-content-around">
+    <div class="card p-4" *ngFor="let item of projectDetails;let i = index">
+        <span>Project Name : {{item.projectName}}</span>
+        <span>Project Type : {{item.projectType}}</span>
+        <span>Client Name : {{item.clientName}}</span>
+        <span>Template Name : {{item.templateName}}</span>
+        <span>Spent Time : {{item.timeSpent}} Sec</span>
+        <div class="btn btn-dark btn-sm m-2" (click)="startTimer(i)">Start Timer</div>
+        <div class="btn btn-danger btn-sm m-2" (click)="stopTimer(i)">Stop Timer</div>
+    </div>
+</div>

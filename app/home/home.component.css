@@ -1,0 +1,17 @@
+.card-container {
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-self: flex-start;
+}
+label{
+    font-size: 0.5rem;
+}
+.card{
+    height: fit-content;
+    width: 300px;
+    box-shadow: 1px 1px 1px 0px gray;
+    border: 1px solid gray;
+    margin: 5px !important;
+}
